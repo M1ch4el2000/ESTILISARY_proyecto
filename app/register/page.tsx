@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RegisterUser } from "./actions";
 
 export default function RegisterPage() {
     return (
@@ -11,7 +12,7 @@ export default function RegisterPage() {
                 </div>
 
                 {/*Formulario de registro*/}
-                <form className="flex flex-col items-center justify-center space-y-4">
+                <form action = {RegisterUser} className="flex flex-col items-center justify-center space-y-4">
                     <div className=" w-full flex flex-col items-center justify-center space-y-3">
                         {/*Nombre*/}
                         <div className="w-full max-w-xs">

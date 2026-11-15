@@ -12,7 +12,7 @@ export default function LoginPage() {
                 {/* Encabezado */}
                 <div className="mb-6 text-center">
                     <h1 className="text-2xl font-bold text-gray-800">
-                        Bienvenida a Estilisary
+                        Bienvenida a Estilisary!
                     </h1>
                     <p className="mt-2 text-sm text-gray-500">
                         Inicio de sesión
