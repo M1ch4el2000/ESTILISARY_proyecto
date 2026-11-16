@@ -63,9 +63,6 @@ export default function LoginPage() {
                     <Link href="/register" className="text-black font-bold block w-full text-center hover:text-pink-700 transition-colors duration-300">Registrarse</Link>
                 </form>
             </div>
-            <footer>
-
-            </footer>
         </main>
     );
 }
