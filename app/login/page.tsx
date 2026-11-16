@@ -1,7 +1,10 @@
+'use client'
 import Link from "next/link";
+import { useActionState } from "react";
+import { LoginUser } from "./actions";
 
 export default function LoginPage() {
-
+    const [state, formAction, isPending] = useActionState(LoginUser, { error: "" });
     
     return (
         <main className="flex min-h-screen items-center justify-center bg-pink-50 p-4">
@@ -20,7 +23,7 @@ export default function LoginPage() {
                 </div>
 
                 {/* Formulario */}
-                <form className="space-y-4">
+                <form action={formAction} className="space-y-4">
                     <div>
                         <label
                             htmlFor="phone_number"
@@ -34,7 +37,7 @@ export default function LoginPage() {
                             type="tel"
                             placeholder="Ej: 300 123 4567"
                             required
-                            className="mt-1 w-full rounded-sm border border-gray-300 px-4 py-2.5 text-gray-900 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-200"
+                            className="mt-1 w-full rounded-sm border border-gray-300 px-4 py-2.5 text-gray-900 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-200 transition duration-300"
                         />
                         <label
                             htmlFor="password"
@@ -47,17 +50,17 @@ export default function LoginPage() {
                             type="password"
                             placeholder="****"
                             required
-                            className="mt-1 w-full rounded-sm border border-gray-300 px-4 py-2.5 text-gray-900 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-200">
+                            className="mt-1 w-full rounded-sm border border-gray-300 px-4 py-2.5 text-gray-900 focus:border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-200 transition duration-300">
                         </input>
                     </div>
-
+                    <p className="block text-center text-gray-700">{state?.error}</p>
                     <button
                         type="submit"
-                        className="w-full rounded-sm bg-pink-600 py-2.5 font-semibold text-white transition hover:bg-pink-700"
+                        className="w-full rounded-sm bg-pink-600 py-2.5 font-semibold text-white transition hover:bg-pink-700 transition-colors duration-300"
                     >
                         Continuar
                     </button>
-                    <Link href="/register" className="text-black font-bold block w-full text-center">Registrarse</Link>
+                    <Link href="/register" className="text-black font-bold block w-full text-center hover:text-pink-700 transition-colors duration-300">Registrarse</Link>
                 </form>
             </div>
             <footer>
